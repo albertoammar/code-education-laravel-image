@@ -15,7 +15,7 @@ steps:
       name: "gcr.io/cloud-builders/docker"
       args: ["exec", "-t", "app", "cp", ".env.example", ".env"]
 
-    - id: "Copy .env"
+    - id: "Run Key generate"
       name: "gcr.io/cloud-builders/docker"
       args: ["exec", "-t", "app", "php", "/var/www/artisan", "key:generate"]
 
@@ -23,7 +23,7 @@ steps:
       name: "gcr.io/cloud-builders/docker"
       args: ["exec", "-t", "app", "php", "/var/www/artisan", "migrate"]
 
-    - id: "Running migrate"
+    - id: "Running tests"
       name: "gcr.io/cloud-builders/docker"
       args:
           [
