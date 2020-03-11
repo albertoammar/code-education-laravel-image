@@ -42,7 +42,6 @@ services:
             - MYSQL_ROOT_PASSWORD=root
         networks:
             - app-network
-
     redis:
         image: redis:alpine
         expose:
